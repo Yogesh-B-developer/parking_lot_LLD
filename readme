@@ -1,0 +1,69 @@
+# Smart Parking Lot - Low Level Design
+
+## Problem Statement
+
+Design the backend of a Smart Parking Lot capable of:
+
+- Parking Spot Allocation
+- Vehicle Entry & Exit
+- Fee Calculation
+- Real-Time Spot Availability
+
+---
+
+## Functional Requirements
+
+- Vehicle Entry
+- Vehicle Exit
+- Automatic Spot Allocation
+- Parking Fee Calculation
+- Live Spot Availability
+
+---
+
+## UML Class Diagram
+
+![Class Diagram](images/ClassDiagram.png)
+
+---
+
+## Relationships
+
+| Parent | Child | Relationship |
+|---------|--------|--------------|
+| Vehicle | Car | Inheritance |
+| Vehicle | Motorcycle | Inheritance |
+| Vehicle | Bus | Inheritance |
+| ParkingLot | ParkingFloor | Composition |
+| ParkingFloor | ParkingSpot | Composition |
+| ParkingTicket | Vehicle | Aggregation |
+| ParkingTicket | ParkingSpot | Aggregation |
+| ParkingController | ParkingLot | Association |
+| FeeService | FeeStrategy | Dependency |
+
+---
+
+## Design Patterns Used
+
+- Strategy Pattern
+- Factory Pattern
+- Singleton Pattern
+- Repository Pattern
+
+---
+
+## Database Design
+
+- Vehicle
+- Parking Spot
+- Parking Ticket
+
+---
+
+## API Design
+
+POST /checkin
+
+POST /checkout
+
+GET /availability
